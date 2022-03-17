@@ -23,3 +23,56 @@ Use your rule with different projects and describe you findings below. See the [
 
 ## Answer
 
+Ajout de la régle :
+```
+ <rule name="NoMoreThreeIfs"
+      language="java"
+      message="3 Ifs imbriqués"
+      class="net.sourceforge.pmd.lang.rule.XPathRule" >
+    <description>
+        3 Ifs imbriqués
+    </description>
+    <priority>3</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+            <![CDATA[
+            //IfStatement/Statement
+            	/Block/BlockStatement/Statement
+            	/IfStatement/Statement
+            		/Block/BlockStatement/Statement
+            		/IfStatement
+            ]]>
+            </value>
+        </property>
+    </properties>
+ </rule>
+
+```
+
+Avec une classe TEST.java :
+
+```
+
+public class Affichage {
+	public boolean test(){
+		if(1>2){
+			if(2>3){
+				if(3>4){
+					return true;
+				
+				}
+			
+			}
+		
+		
+		}
+	return false;
+	}
+}
+```
+
+Cela donne l'alerte : 
+```
+/home/cobald/Documents/VV/MiniBlogJ2E-master/src/TEST.java:6:	NoMoreThreeIfs:	3 Ifs imbriqués
+```
