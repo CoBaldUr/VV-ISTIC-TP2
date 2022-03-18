@@ -4,3 +4,6 @@ Explain under which circumstances *Tight Class Cohesion* (TCC) and *Loose Class 
 
 ## Answer
 
+
+Pour que TCC et LCC aient la même valeur, il ne faut pas de lien indirect entre les paires de méthodes.
+LCC ne peut pas être plus bas que TCC car TCC prend en compte les liens indirects (il sera donc superieur ou égal)
