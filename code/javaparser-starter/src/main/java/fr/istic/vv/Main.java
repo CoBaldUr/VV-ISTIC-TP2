@@ -27,10 +27,17 @@ public class Main {
             System.exit(2);
         }
 
+        
         SourceRoot root = new SourceRoot(file.toPath());
         PublicElementsPrinter printer = new PublicElementsPrinter();
         root.parse("", (localPath, absolutePath, result) -> {
             result.ifSuccessful(unit -> unit.accept(printer, null));
+            return SourceRoot.Callback.Result.DONT_SAVE;
+        });
+        
+        NoGetterPrinter NGprinter = new NoGetterPrinter();
+        root.parse("", (localPath, absolutePath, result) -> {
+            result.ifSuccessful(unit -> unit.accept(NGprinter, null));
             return SourceRoot.Callback.Result.DONT_SAVE;
         });
     }
