@@ -1,0 +1,36 @@
+Affichage
+cours.dbconnect.BaseMySQLDao
+cours.dbconnect.FilterModComm
+cours.dbconnect.DiscoFilter
+cours.dbconnect.LogIn
+	serialVersionUID = 1L
+cours.dbconnect.model.Post
+	id
+	pseudoCreator
+	content
+	comments
+cours.dbconnect.model.User
+	id
+	pseudo
+	mail
+	password
+cours.dbconnect.model.PagePrincipale
+	id
+cours.dbconnect.model.ModifAccount
+	id
+cours.dbconnect.model.ListFriend
+cours.dbconnect.model.Comment
+	id
+	idPost
+	pseudoUser
+	content
+cours.dbconnect.ModCompte
+cours.dbconnect.UserMySQLDao
+cours.dbconnect.FiltreLogIn
+cours.dbconnect.ModFriend
+cours.dbconnect.FilterModPost
+cours.dbconnect.CreateAccount
+	serialVersionUID = 1L
+cours.dbconnect.DbConnection
+	connection
+Affichage
